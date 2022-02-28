@@ -1,0 +1,12 @@
+env/
+.env
+venv/
+.venv/
+
+__pycache__/
+
+.vscode/
+
+db.sqlite3
+
+.pytest*
