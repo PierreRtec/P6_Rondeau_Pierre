@@ -3,6 +3,8 @@ env/
 venv/
 .venv/
 
+API_ocmovies/
+
 __pycache__/
 
 .vscode/
