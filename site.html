@@ -5,65 +5,114 @@
         <meta name="viewport" content="width=device-width">
         <title>JustStreamIt</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+        <!-- script js -->
+        <script src="js/main.js" defer></script>
     </head>
     <body>
+
       <header>
-          <h1>JustStreamIt</h1>
+          <div>
+            <h1>JustStreamIt</h1>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">Catégories</a></li>
+            </ul>
+        </nav>
       </header>
 
-      <main>
-          <!-- Meilleur Film -->
-          <section id="highest-rated">
-              <h2>Le mieux noté</h2>
-              <div id="best-movie">highest_rated</div>
-              <button id="btn-more-info">Plus d'informations</button>
-          </section>
+    <main>
+        <!-- Meilleur Film -->
+        <section id="highest-rated">
+            <h2>Le mieux noté</h2>
+            <div id="highest-title"></div>
+            <img src="#" id="modal-image">
+            <div id="best-movie-description"></div>
+            <button id="btn-test" data-target="#modal" class="openmodal">Play</button>
+        </section>
 
-          <!-- Films les mieux notés -->
-          <section id="highest-rated">
-              <h2>Le mieux noté</h2>
-              <div id="best-movie">highest_rated</div>
-              <button id="btn-more-info">Plus d'informations</button>
-          </section>
+        <!-- Films les mieux notés -->
+        <section id="highests-rateds">
+            <h2>Les mieux notés</h2>
+            <div id="best-movies"></div>
+            <img src="#" id="modal-image">
+            <button id="btn-test" data-target="#modal" class="openmodal">Play</button>
+        </section>
 
-          <!-- Catégorie 1 : Action -->
-          <section id="action" class="category">
-            <h2 class="category-title">Action</h2>
-            <div class="carousel action">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
-                <div class="carousel-wrap">
-                    <div class="carousel-content" data-pos="0"></div>
-                </div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
+        <!-- Catégorie 1 : Action -->
+        <section id="action" class="category">
+        <h2 class="category-title">Action</h2>
+        <div class="carousel action">
+            <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
+            <div class="carousel-wrap">
+                <div class="carousel-content" data-pos="0"></div>
             </div>
-          </section>
+            <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+        </section>
 
-          <!-- Catégorie 2 : Science-Fiction -->
-          <section id="sci-fi" class="category">
-            <h2 class="category-title">Science-Fiction</h2>
-            <div class="carousel sci-fi">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
-                <div class="carousel-wrap">
-                    <div class="carousel-content" data-pos="0"></div>
-                </div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
+        <!-- Catégorie 2 : Science-Fiction -->
+        <section id="sci-fi" class="category">
+        <h2 class="category-title">Science-Fiction</h2>
+        <div class="carousel sci-fi">
+            <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
+            <div class="carousel-wrap">
+                <div class="carousel-content" data-pos="0"></div>
             </div>
-          </section>
+            <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+        </section>
 
-          <!-- Catégorie 3 : Aventure -->
-          <section id="adventure" class="category">
-            <h2 class="category-title">Aventure</h2>
-            <div class="carousel adventure">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
-                <div class="carousel-wrap">
-                    <div class="carousel-content" data-pos="0"></div>
-                </div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
+        <!-- Catégorie 3 : Aventure -->
+        <section id="adventure" class="category">
+        <h2 class="category-title">Aventure</h2>
+        <div class="carousel adventure">
+            <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
+            <div class="carousel-wrap">
+                <div class="carousel-content" data-pos="0"></div>
             </div>
-          </section>
+            <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+        </section>
 
-      </main>
+    </main>
 
-    </body>
+      <!-- bouton ouverture des modales -->
+      <a href="#" role="button" data-target="#modal" class="openmodal">ouvrir la modale 1</a>
 
+      <a href="#" role="button" data-target="#modal2" class="openmodal">ouvrir la modale 2</a>
+
+          <!-- Modale -->
+          <div class="modal" id="modal" role="dialog">
+              <div class="modal-content">
+                  <div class="modal-close" data-dismiss="dialog">X</div>
+                  <div class="modal-header">
+                      <p id="modal-title">Titre de la modale 1</p>
+                  </div>
+                  <div class="modal-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates excepturi sint, veritatis officia laborum temporibus. Beatae neque reprehenderit ipsum numquam facilis repudiandae iste explicabo voluptatum corrupti harum. Sunt, asperiores.
+                  </div>
+                  <div class="modal-footer">
+                      <a href="#" class="btn btn-close" role="button" data-dismiss="dialog">Fermer</a>
+                      <a href="#" class="btn" role="button">Valider</a>
+                  </div>
+              </div>
+          </div>
+          <div class="modal" id="modal2" role="dialog">
+              <div class="modal-content">
+                  <div class="modal-close" data-dismiss="dialog">X</div>
+                  <div class="modal-header">
+                      <p>Titre de la modale 2</p>
+                  </div>
+                  <div class="modal-body">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptates excepturi sint, veritatis officia laborum temporibus. Beatae neque reprehenderit ipsum numquam facilis repudiandae iste explicabo voluptatum corrupti harum. Sunt, asperiores.
+                  </div>
+                  <div class="modal-footer">
+                      <a href="#" class="btn btn-close" role="button" data-dismiss="dialog">Fermer</a>
+                      <a href="#" class="btn" role="button">Valider</a>
+                  </div>
+              </div>
+          </div>
+      </body>
 </html>
