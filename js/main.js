@@ -1,5 +1,8 @@
 // Récup url main de l'api
 const mainUrl = "http://127.0.0.1:8000/api/v1/titles/";
+const movies_max_page = 8;
+const page_size = '&page_size=8';
+const page_size_category = '&page_size=7';
 
 
 // Récup meilleur film
@@ -19,32 +22,62 @@ function getHighestRatedMovie() {
     })
 }
 
-// Récup de l'url du meilleur film pour obtenir ses informations
-function renderBestMovie() {
-    fetch(mainUrl + "?sort_by=-imdb_score")
+
+// Récup des films les mieux notés
+function getBestMovies() {
+    fetch(mainUrl + "?sort_by=-imdb_score" + page_size)
     .then(res_movies => res_movies.json())
     .then(res => {
         console.log(res);
-        // insertion des éléments dans le HTML
-        let highest_rated_url = res.results[0].url // url du premier film de la liste
-        fetch(highest_rated_url)
-        .then(res_movies => res_movies.json())
-        .then(res => {
-            let movieDescription = document.getElementById("best-movie-description")
-            movieDescription.innerHTML = res.description
-        })
+        res.results.shift() // supprime le premier film de la liste
+        // liste des 7 meilleurs films
+        let bestMovies = document.getElementById("best-movies-carousel")
+        for (let movie of res.results) {
+            bestMovies.innerHTML += `
+                <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+            `
+        }
     })
 }
 
-// Récup les films les mieux notés
+// 2 += 3 = 5
+
+// Création du carousel avec boutons et eventListeners (modifier le DOM OC)
 
 
 // Récup les films de la catégorie "Action"
-
+function getBestMoviesAction() {
+    fetch(mainUrl + "?genres=action" + "?sort_by=-imdb_score" + page_size_category)
+    .then(res_movies => res_movies.json())
+    .then(res => {
+        console.log(res);
+        res.results
+        let bestMoviesAction = document.getElementById("best-movies-carousel-action")
+        for (let movie of res.results) {
+            bestMoviesAction.innerHTML += `
+                <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+            `
+        }
+    })
+}
 
 
 // Récup les films de la catégorie "Science-Fiction"
-
+// Récup les films de la catégorie "Action"
+function getBestMoviesSciFi() {
+    fetch(mainUrl + "?genres=sci-fi" + "?sort_by=-imdb_score" + page_size_category)
+    .then(res_movies => res_movies.json())
+    .then(res => {
+        console.log(res);
+        res.results
+        let bestMoviesSciFi = document.getElementById("best-movies-carousel-sci-fi")
+        for (let movie of res.results) {
+            bestMoviesSciFi.innerHTML += `
+                <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+            `
+        }
+    })
+}
 
 
 // Récup les films de la catégorie "Aventure"
@@ -112,7 +145,9 @@ window.onload = () => {
 ////////
 function main() {
     getHighestRatedMovie()
-    renderBestMovie()
+    getBestMovies()
+    getBestMoviesAction()
+    getBestMoviesSciFi()
 };
 
 main();
