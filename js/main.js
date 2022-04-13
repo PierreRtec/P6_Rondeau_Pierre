@@ -2,6 +2,7 @@
 const mainUrl = "http://127.0.0.1:8000/api/v1/titles/";
 const movies_max_page = 8;
 const page_size = '&page_size=8';
+const page_size_category = '&page_size=7';
 const sci_fi = "?genre=Sci-Fi";
 const action = "?genre=Action"
 const imdb_score =  "&sort_by=-imdb_score";
@@ -63,7 +64,7 @@ function getBestMoviesAction() {
 
 // Récup les films de la catégorie "Science-Fiction"
 function getBestMoviesSciFi() {
-    fetch(mainUrl + sci_fi + imdb_score + page_size)
+    fetch(mainUrl + sci_fi + imdb_score + page_size_category)
     .then(res_movies => res_movies.json())
     .then(res => {
         console.log(res);
@@ -80,7 +81,7 @@ function getBestMoviesSciFi() {
 
 // Récup les films de la catégorie "Aventure"
 function getBestMoviesAventure() {
-    fetch(mainUrl + aventure + imdb_score + page_size)
+    fetch(mainUrl + aventure + imdb_score + page_size_category)
     .then(res_movies => res_movies.json())
     .then(res => {
         console.log(res);
