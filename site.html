@@ -6,7 +6,8 @@
         <title>JustStreamIt</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
         <!-- script js -->
-        <script src="js/main.js" defer></script>
+        <script src="js/main.js" async></script>
+        <script src="js/carousel.js" async></script>
     </head>
     <body>
 
@@ -23,6 +24,72 @@
       </header>
 
     <main>
+        <!-- test de recup le bon carousel avec pagination et tout -->
+        <div class="title">Carousel en boucle</div>
+        
+            <div id="carousel1">
+                <div class="item">
+                    <div class="item__image"><img src="" alt="" /></div>
+
+                    <div class="item__body">
+                        <div class="item__title">Mon titre 1</div>
+
+                        <div class="item__description">Ici une petite description pour tester le carousel</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item__image"><img src="" alt="" /></div>
+
+                    <div class="item__body">
+                        <div class="item__title">Mon titre 2</div>
+
+                        <div class="item__description">Ici une petite description pour tester le carousel</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item__image"><img src="" alt="" /></div>
+
+                    <div class="item__body">
+                        <div class="item__title">Mon titre 3</div>
+
+                        <div class="item__description">Ici une petite description pour tester le carousel</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item__image"><img src="" alt="" /></div>
+
+                    <div class="item__body">
+                        <div class="item__title">Mon titre 4</div>
+
+                        <div class="item__description">Ici une petite description pour tester le carousel</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item__image"><img src="" alt="" /></div>
+
+                    <div class="item__body">
+                        <div class="item__title">Mon titre 5</div>
+
+                        <div class="item__description">Ici une petite description pour tester le carousel</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item__image"><img src="" alt="" /></div>
+
+                    <div class="item__body">
+                        <div class="item__title">Mon titre 6</div>
+
+                        <div class="item__description">Ici une petite description pour tester le carousel</div>
+                    </div>
+                </div>
+            </div>
+
+        
         <!-- Meilleur Film -->
         <section id="highest-rated">
             <h2>Le mieux noté</h2>
@@ -33,24 +100,24 @@
         </section>
 
         <!-- Carousel des Films les mieux notés -->
-        <section id="best-movies">
+        <section id="carousel1">
             <h2 class="bm-title-h2">Films les mieux notés</h2>
             <div class="carousel-best-movies">
                 <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
                 <div id="best-movies-carousel"></div>
                 <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-            </section>
+        </section>
 
-        <!-- Catégorie 1 : Action -->
-        <section id="best-movies-actions">
-            <h2 class="category-title">Action</h2>
+        <!-- Catégorie 1 : Comédie -->
+        <section id="best-movies-comedy">
+            <h2 class="category-title">Comédie</h2>
             <div class="carousel-best-movies">
                 <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
-                <div id="best-movies-carousel-action"></div>
+                <div id="best-movies-carousel-comedy"></div>
                 <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-            </section>
+        </section>
 
         <!-- Catégorie 2 : Science-Fiction -->
         <section id="best-movies-sci-fi">
@@ -60,9 +127,9 @@
                 <div id="best-movies-carousel-sci-fi"></div>
                 <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-            </section>
+        </section>
 
-        <!-- Catégorie 2 : Aventure -->
+        <!-- Catégorie 3 : Aventure -->
         <section id="best-movies-aventure">
             <h2 class="category-title">Aventure</h2>
             <div class="carousel-best-movies">

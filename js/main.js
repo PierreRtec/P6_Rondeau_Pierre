@@ -4,7 +4,7 @@ const movies_max_page = 8;
 const page_size = '&page_size=8';
 const page_size_category = '&page_size=7';
 const sci_fi = "?genre=Sci-Fi";
-const action = "?genre=Action"
+const comedie = "?genre=Comedy";
 const imdb_score =  "&sort_by=-imdb_score";
 const aventure = "?genre=Adventure";
 const category_url = "http://127.0.0.1:8000/api/v1/genres/"
@@ -44,17 +44,16 @@ function getBestMovies() {
     })
 }
 
-
-// Récup les films de la catégorie "Action"
-function getBestMoviesAction() {
-    fetch(mainUrl + action + imdb_score + page_size)
+// Récup les films de la catégorie "Comédie"
+function getBestMoviesComedie() {
+    fetch(mainUrl + comedie + imdb_score + page_size)
     .then(res_movies => res_movies.json())
     .then(res => {
         console.log(res);
         res.results.shift();
-        let bestMoviesAction = document.getElementById("best-movies-carousel-action")
+        let bestMoviesComedy = document.getElementById("best-movies-carousel-comedy")
         for (let movie of res.results) {
-            bestMoviesAction.innerHTML += `
+            bestMoviesComedy.innerHTML += `
                 <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
             `
         }
@@ -158,7 +157,7 @@ window.onload = () => {
 function main() {
     getHighestRatedMovie()
     getBestMovies()
-    getBestMoviesAction()
+    getBestMoviesComedie()
     getBestMoviesSciFi()
     getBestMoviesAventure()
 };
