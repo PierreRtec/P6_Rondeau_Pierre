@@ -38,10 +38,20 @@ function getBestMovies() {
         let bestMovies = document.getElementById("best-movies-carousel")
         for (let movie of res.results) {
             bestMovies.innerHTML += `
-                <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+                <div class="item">
+                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                </div>
             `
         }
     })
+    .then(() => {
+        new Carousel(document.querySelector("#best-movies-carousel"),{
+            slidesToScroll: 1,
+            slidesVisible: 4,
+            loop: false,
+        })
+    })
+
 }
 
 // Récup les films de la catégorie "Comédie"
@@ -54,9 +64,18 @@ function getBestMoviesComedie() {
         let bestMoviesComedy = document.getElementById("best-movies-carousel-comedy")
         for (let movie of res.results) {
             bestMoviesComedy.innerHTML += `
-                <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+                <div class="item">
+                <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                </div>
             `
         }
+    })
+    .then(() => {
+        new Carousel(document.querySelector("#best-movies-carousel-comedy"),{
+            slidesToScroll: 1,
+            slidesVisible: 4,
+            loop: false,
+        })
     })
 }
 
@@ -71,9 +90,18 @@ function getBestMoviesSciFi() {
         let bestMoviesSciFi = document.getElementById("best-movies-carousel-sci-fi")
             for (let movie of res.results) {
                 bestMoviesSciFi.innerHTML += `
-                    <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+                    <div class="item">
+                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                    </div>
                 `
         }
+    })
+    .then(() => {
+        new Carousel(document.querySelector("#best-movies-carousel-sci-fi"),{
+            slidesToScroll: 1,
+            slidesVisible: 4,
+            loop: false,
+        })
     })
 }
 
@@ -88,9 +116,18 @@ function getBestMoviesAventure() {
         let bestMoviesAdventure = document.getElementById("best-movies-carousel-aventure")
             for (let movie of res.results) {
                 bestMoviesAdventure.innerHTML += `
-                    <img class="d-block w-100" src="${movie.image_url}" alt="${movie.title}">
+                    <div class="item">
+                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                    </div>
                 `
         }
+    })
+    .then(() => {
+        new Carousel(document.querySelector("#best-movies-carousel-aventure"),{
+            slidesToScroll: 1,
+            slidesVisible: 4,
+            loop: false,
+        })
     })
 }
 

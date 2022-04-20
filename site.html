@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
         <!-- script js -->
         <script src="js/main.js" async></script>
-        <script src="js/carousel.js" async></script>
     </head>
     <body>
 
@@ -24,9 +23,7 @@
       </header>
 
     <main>
-        <!-- test de recup le bon carousel avec pagination et tout -->
         <div class="title">Carousel en boucle</div>
-        
             <div id="carousel1">
                 <div class="item">
                     <div class="item__image"><img src="" alt="" /></div>
@@ -88,56 +85,48 @@
                     </div>
                 </div>
             </div>
-
-        
         <!-- Meilleur Film -->
-        <section id="highest-rated">
+        <div id="highest-rated">
             <h2>Le mieux noté</h2>
             <div id="highest-title"></div>
             <img src="#" id="modal-image">
             <div id="best-movie-description"></div>
             <button id="btn-test" data-target="#modal" class="openmodal">Play</button>
-        </section>
+        </div>
 
         <!-- Carousel des Films les mieux notés -->
-        <section id="carousel1">
+        <div id="best-movies">
             <h2 class="bm-title-h2">Films les mieux notés</h2>
+            <div id="best-movies-carousel"></div>
             <div class="carousel-best-movies">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
                 <div id="best-movies-carousel"></div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-        </section>
+        </div>
 
         <!-- Catégorie 1 : Comédie -->
-        <section id="best-movies-comedy">
+        <div id="best-movies-comedy">
             <h2 class="category-title">Comédie</h2>
             <div class="carousel-best-movies">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
                 <div id="best-movies-carousel-comedy"></div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-        </section>
+        </div>
 
         <!-- Catégorie 2 : Science-Fiction -->
-        <section id="best-movies-sci-fi">
+        <div id="best-movies-sci-fi">
             <h2 class="category-title">Science-Fiction</h2>
             <div class="carousel-best-movies">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
                 <div id="best-movies-carousel-sci-fi"></div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-        </section>
+        </div>
 
         <!-- Catégorie 3 : Aventure -->
-        <section id="best-movies-aventure">
+        <div id="best-movies-aventure">
             <h2 class="category-title">Aventure</h2>
             <div class="carousel-best-movies">
-                <button class="btn-arrow arrow-left"><i class="fas fa-arrow-circle-left"></i></button>
                 <div id="best-movies-carousel-aventure"></div>
-                <button class="btn-arrow arrow-right"><i class="fas fa-arrow-circle-right"></i></button>
             </div>
-        </section>
+        </div>
     </main>
     </body>
 </html>
+<script src="js/carousel.js" async></script>

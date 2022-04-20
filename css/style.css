@@ -95,47 +95,23 @@ nav li a {
     background-color: red;
 }
 
-
-.carousel-best-movies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 15px;
-}
-
-div.carousel-best-movies {
-    background-color: black;
-}
-                
-.btn-arrow {
-    background-color: #e5e9f0;
-    color: #434c5e;
-    border-radius: 5px;
-    border: none;
-    font-size: 2.5em;
-    cursor: pointer;
-}
-
-.btn-arrow:hover {
-    color: #5e81ac;
-}
-
 h2 {
     text-align: center;
+    color: white;
 }
 
-section#highest-rated {
+div#highest-rated {
     text-align: center;
 }
 
 h2.bm-title-h2 {
     text-align: center;
-    color: #434c5e;
+    color: #ffffff;
 }
 
 h2.category-title {
     text-align: center;
-    color: #434c5e;
+    color: #ffffff;
 }
 
 /**
@@ -199,6 +175,7 @@ CAROUSEL
  .carousel__container {
      transition: transform 0.3s;
      transform: translateZ(0);
+     display: flex;
  }
  .carousel__container:after {
      content: "";
@@ -213,8 +190,8 @@ CAROUSEL
      position: absolute;
      width: 40px;
      height: 40px;
-     background: #fff url(4beb4317ebb605abb3096d9a1b5dbde4.svg) 50% no-repeat;
-     background-size: 20px 20px;
+     background: #fff url(../img/arrow-right.png) 50% no-repeat;
+     background-size: cover;
      border-radius: 50%;
      top: 50%;
      margin-top: -20px;
@@ -228,7 +205,8 @@ CAROUSEL
      transform: scale(1.2);
  }
  .carousel__prev {
-     background-image: url(34e24e9b7204d9bc7367d0d520ca4157.svg);
+     background-image: url(../img/arrow-left.png);
+     background-size: cover;
      right: auto;
      left: -20px;
  }

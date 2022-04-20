@@ -4,20 +4,21 @@ class Carousel {
      * @param {HTMLElement} element 
      * @param {Object} options
      * @param {Object} [options.slidesToScroll=1] Nombre d'éléments à faire défiler
-     * @param {Object} [options.slidesVisible=1] Nombre d'éléments visible dans un slide
+     * @param {Object} [options.slidesVisible=4] Nombre d'éléments visible dans un slide
      * @param {boolean} [options.loop=false] Dois-ton boucler en fin carousel
      */
     constructor (element, options = {}) {
         this.element = element
         this.options = Object.assign({}, {
             slidesToScroll: 1,
-            slidesVisible: 1,
+            slidesVisible: 4,
             loop: false,
         }, options)
         let children = [].slice.call(element.children)
         this.isMobile = false
         this.currentItem = 0
         this.moveCallbacks = []
+        this.ratio = children.length / this.slidesVisible
 
         // Modification du DOM
         this.root = this.createDivWithClass('carousel')
@@ -25,10 +26,9 @@ class Carousel {
         this.root.setAttribute('tabindex', '0')
         this.root.appendChild(this.container)
         this.element.appendChild(this.root)
-        
         this.items = children.map((child) => {
             let item = this.createDivWithClass('carousel__item')
-            item.style.width = ((100 / this.options.slidesVisible) / ratio) + "%"
+            item.style.width = ((100 / this.options.slidesVisible) / this.ratio) + "%"
             item.appendChild(child)
             this.container.appendChild(child)
             return item
@@ -55,15 +55,14 @@ class Carousel {
      * Applique les bonnes dimensions aux éléments du carousel
      */
     setStyle () {
-        let ratio = this.items.length / this.slidesVisible
-        this.container.style.width = (ratio * 100) + "%"
-        this.items.forEach(item => item.style.width = ((100 / this.slidesVisible) / ratio) + "%")
+        this.container.style.width = (this.ratio * 100) + "%"
+        this.items.forEach(item => item.style.width = ((100 / this.slidesVisible) / this.ratio) + "%")
     }
 
 
     createNavigation () {
-        nextButton = this.createDivWithClass('carousel__next')
-        prevButton = this.createDivWithClass('carousel__prev')
+        let nextButton = this.createDivWithClass('carousel__next')
+        let prevButton = this.createDivWithClass('carousel__prev')
         this.root.appendChild(nextButton)
         this.root.appendChild(prevButton)
         nextButton.addEventListener('click', this.next.bind(this))
@@ -166,13 +165,8 @@ class Carousel {
     }
 }
 
-
-document.addEventListener("DOMContentLoaded", async function() {
-    
-    new Carousel(document.querySelector("#adventure"), {
-        slidesToScroll: 1,
-        slidesVisible: 5,
-        loop: false,
-    })
-    
+new Carousel(document.querySelector("#carousel1"), {
+    slidesToScroll: 1,
+    slidesVisible: 4,
+    loop: false,
 })
