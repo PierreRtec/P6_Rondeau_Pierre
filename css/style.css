@@ -185,6 +185,12 @@ CAROUSEL
  .carousel__item {
      float: left;
  }
+
+.carousel__item .item {
+    margin: 50px;
+}
+
+ 
  .carousel__next,
  .carousel__prev {
      position: absolute;

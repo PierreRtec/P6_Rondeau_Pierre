@@ -9,6 +9,7 @@ const imdb_score =  "&sort_by=-imdb_score";
 const aventure = "?genre=Adventure";
 const category_url = "http://127.0.0.1:8000/api/v1/genres/"
 
+
 // Récup meilleur film
 function getHighestRatedMovie() {
     fetch(mainUrl + "?sort_by=-imdb_score")
@@ -51,7 +52,6 @@ function getBestMovies() {
             loop: false,
         })
     })
-
 }
 
 // Récup les films de la catégorie "Comédie"
@@ -132,9 +132,7 @@ function getBestMoviesAventure() {
 }
 
 
-
-window.onload = () => {
-
+function modales() {
     // On récupère tous les boutons d'ouverture de modale
     const modalButtons = document.querySelectorAll(".openmodal");
     
@@ -197,6 +195,7 @@ function main() {
     getBestMoviesComedie()
     getBestMoviesSciFi()
     getBestMoviesAventure()
+    modales()
 };
 
 main();

@@ -30,7 +30,7 @@ class Carousel {
             let item = this.createDivWithClass('carousel__item')
             item.style.width = ((100 / this.options.slidesVisible) / this.ratio) + "%"
             item.appendChild(child)
-            this.container.appendChild(child)
+            this.container.appendChild(item)
             return item
         })
 
@@ -164,9 +164,3 @@ class Carousel {
         return this.isMobile ? 1 : this.options.slidesVisible
     }
 }
-
-new Carousel(document.querySelector("#carousel1"), {
-    slidesToScroll: 1,
-    slidesVisible: 4,
-    loop: false,
-})
