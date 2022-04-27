@@ -1,4 +1,4 @@
-// Récup url main de l'api
+// Définition des constantes
 const mainUrl = "http://127.0.0.1:8000/api/v1/titles/";
 const movies_max_page = 8;
 const page_size = '&page_size=8';
@@ -24,6 +24,13 @@ function getHighestRatedMovie() {
         btn_test.dataset.id = highest_rated.id // définit l'id sur le btn qui ouvre la modale (pour ce film)
         let modalImage = document.getElementById("modal-image")
         modalImage.src = highest_rated.image_url
+        let highest_rated_url = res.results[0].url // url du premier film de la liste
+        fetch(highest_rated_url)
+        .then(res_movies => res_movies.json())
+        .then(res => {
+            let movieDescription = document.getElementById("best-movie-description")
+            movieDescription.innerHTML = res.description
+        })
     })
 }
 
@@ -132,7 +139,7 @@ function getBestMoviesAventure() {
 }
 
 
-function modales() {
+async function modales() {
     // On récupère tous les boutons d'ouverture de modale
     const modalButtons = document.querySelectorAll(".openmodal");
     
@@ -150,10 +157,42 @@ function modales() {
             .then(res_movies => res_movies.json())
             .then(res => {
                 console.log(res);
-                // insertion des éléments dans le HTML
+                // Titre du film
                 let modalTitle = document.getElementById("modal-title")
                 modalTitle.innerHTML = res.title
-                // continuer à prendre les éléments 
+                // // Un résumé du film
+                // let modalDescription = document.getElementById("modal-description")
+                // modalDescription.innerHTML = res.description
+                // Le genre complet du film
+                let modalGenres = document.getElementById("modal-genres")
+                modalGenres.innerHTML = res.genres
+                // Sa date de sortie
+                let modalYear = document.getElementById("modal-year")
+                modalYear.innerHTML = res.year
+                // Son Rated
+                let modalRated = document.getElementById("modal-rated")
+                modalRated.innerHTML = res.rated
+                // Son score Imdb
+                let modalImdbScore = document.getElementById("modal-imdb-score")
+                modalImdbScore.innerHTML = res.imdb_score
+                // Son réalisateur
+                let modalDirectors = document.getElementById("modal-directors")
+                modalDirectors.innerHTML = res.directors
+                // La liste des acteurs
+                let modalActors = document.getElementById("modal-actors")
+                modalActors.innerHTML = res.actors
+                // Sa durée
+                let modalDuration = document.getElementById("modal-duration")
+                modalDuration.innerHTML = res.duration
+                // Le pays d’origine
+                let modalCountries = document.getElementById("modal-countries")
+                modalCountries.innerHTML = res.countries
+                // Le résultat au Box Office
+                let modalWorldwidegrossincome = document.getElementById("modal-worldwide-gross-income")
+                modalWorldwidegrossincome.innerHTML = res.worldwide_gross_income
+                // La description longue du film
+                let modalLongDescription = document.getElementById("modal-long-description")
+                modalLongDescription.innerHTML = res.long_description
                 // après la gestion d'affichage des films
             })
             
