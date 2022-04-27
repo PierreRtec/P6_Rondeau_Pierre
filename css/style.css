@@ -9,10 +9,10 @@ header {
     margin: 15px;
     padding: 15px;  
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     position: relative;
     flex-wrap: wrap;
-    box-shadow: 0 0 2em rgba(255, 255, 255, 0.877);
+    box-shadow: 0 0 3em rgba(0, 0, 0, 0.877);
 }
 
 nav ul {
@@ -95,8 +95,8 @@ nav li a {
     background-color: red;
 }
 
-h2 {
-    text-align: center;
+h2, h3 {
+    text-align: left;
     color: white;
 }
 
@@ -118,17 +118,23 @@ h2.category-title {
 CAROUSEL
  */
 
- body,
  html {
-     margin: 0;
-     padding: 0;
-     min-height: 100%;
-     overflow-x: hidden;
- }
+    width: 100%;
+    background-color: rgb(53, 51, 51);
+    overflow-x: hidden;
+    min-height: 100%;
+  }
+  body {
+    width: 80%;
+    margin: auto;
+    overflow-x: hidden;
+  }
+  
  body {
      font-family: sans-serif;
      padding: 0 50px 50px;
-     background: linear-gradient(45deg, #deb900, #f34646) 50% no-repeat;
+     background-color: #21D4FD;
+     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
      line-height: 1.4;
  }
  .title {
@@ -189,13 +195,11 @@ CAROUSEL
 .carousel__item .item {
     margin: 50px;
 }
-
- 
  .carousel__next,
  .carousel__prev {
      position: absolute;
-     width: 40px;
-     height: 40px;
+     width: 36px;
+     height: 36px;
      background: #fff url(../img/arrow-right.png) 50% no-repeat;
      background-size: cover;
      border-radius: 50%;
@@ -205,6 +209,7 @@ CAROUSEL
      box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
      cursor: pointer;
      transition: transform 0.3s, opacity 0.3s;
+     opacity: 0.6;
  }
  .carousel__next:hover,
  .carousel__prev:hover {
@@ -248,4 +253,3 @@ CAROUSEL
          display: block;
      }
  }
- 

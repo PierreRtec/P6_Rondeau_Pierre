@@ -139,10 +139,11 @@ function getBestMoviesAventure() {
 }
 
 
+// Gestion des modales générale
 async function modales() {
     // On récupère tous les boutons d'ouverture de modale
     const modalButtons = document.querySelectorAll(".openmodal");
-    
+
     for(let button of modalButtons){
         button.addEventListener("click", function(e){
             // On empêche la navigation
@@ -157,12 +158,12 @@ async function modales() {
             .then(res_movies => res_movies.json())
             .then(res => {
                 console.log(res);
+                // Image du film
+                let modalImg = document.getElementById("modal-img")
+                modalImg.src = res.image_url
                 // Titre du film
                 let modalTitle = document.getElementById("modal-title")
                 modalTitle.innerHTML = res.title
-                // // Un résumé du film
-                // let modalDescription = document.getElementById("modal-description")
-                // modalDescription.innerHTML = res.description
                 // Le genre complet du film
                 let modalGenres = document.getElementById("modal-genres")
                 modalGenres.innerHTML = res.genres
@@ -195,7 +196,6 @@ async function modales() {
                 modalLongDescription.innerHTML = res.long_description
                 // après la gestion d'affichage des films
             })
-            
 
             // On récupère la bonne modale
             let modal = document.querySelector(target);
@@ -235,6 +235,7 @@ function main() {
     getBestMoviesSciFi()
     getBestMoviesAventure()
     modales()
+    openModalbyImg()
 };
 
 main();
