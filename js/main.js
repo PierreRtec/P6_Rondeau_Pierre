@@ -47,7 +47,8 @@ function getBestMovies() {
         for (let movie of res.results) {
             bestMovies.innerHTML += `
                 <div class="item">
-                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+                    id="btn-test" data-target="#modal" class="openmodal"></div>
                 </div>
             `
         }
@@ -58,6 +59,9 @@ function getBestMovies() {
             slidesVisible: 4,
             loop: false,
         })
+    })
+    .then(() => {
+        modales()
     })
 }
 
@@ -72,7 +76,8 @@ function getBestMoviesComedie() {
         for (let movie of res.results) {
             bestMoviesComedy.innerHTML += `
                 <div class="item">
-                <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+                    id="btn-test" data-target="#modal" class="openmodal"></div>
                 </div>
             `
         }
@@ -83,6 +88,9 @@ function getBestMoviesComedie() {
             slidesVisible: 4,
             loop: false,
         })
+    })
+    .then(() => {
+        modales()
     })
 }
 
@@ -98,7 +106,8 @@ function getBestMoviesSciFi() {
             for (let movie of res.results) {
                 bestMoviesSciFi.innerHTML += `
                     <div class="item">
-                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+                    id="btn-test" data-target="#modal" class="openmodal"></div>
                     </div>
                 `
         }
@@ -109,6 +118,9 @@ function getBestMoviesSciFi() {
             slidesVisible: 4,
             loop: false,
         })
+    })
+    .then(() => {
+        modales()
     })
 }
 
@@ -124,7 +136,8 @@ function getBestMoviesAventure() {
             for (let movie of res.results) {
                 bestMoviesAdventure.innerHTML += `
                     <div class="item">
-                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"></div>
+                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+                        id="btn-test" data-target="#modal" class="openmodal"></div>
                     </div>
                 `
         }
@@ -135,6 +148,9 @@ function getBestMoviesAventure() {
             slidesVisible: 4,
             loop: false,
         })
+    })
+    .then(() => {
+        modales()
     })
 }
 
@@ -235,7 +251,6 @@ function main() {
     getBestMoviesSciFi()
     getBestMoviesAventure()
     modales()
-    openModalbyImg()
 };
 
 main();
