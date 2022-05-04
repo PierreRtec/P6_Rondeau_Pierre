@@ -1,7 +1,6 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+html {
+    overflow-y: auto;
 }
-
 
 header {
     background-color: linear-gradient(45deg, #f31c1c, #deb900) 30% no-repeat;
@@ -15,23 +14,82 @@ header {
     box-shadow: 0 0 3em rgba(0, 0, 0, 0.877);
 }
 
-nav ul {
-    display: flex;
-    list-style-type: none;
-    flex-wrap: wrap;
+.space {
+    height: 40px;
+    width: 40px;
 }
 
-nav li {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 15px;
+h1.main-title {
+    margin: 15px;
+    color: #ffffff;
 }
 
-nav li a {
+/* Bouton d'accueil */
+.homebtn {
+    background-color: #02c047;
+    border-radius: 2px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.homepage-btn {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.homebtn:hover {
+    background-color: #3e438e;
+  }
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #02c047;
+    border-radius: 2px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  /* Dropdown Content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
     text-decoration: none;
-}
-
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: rgb(96, 216, 16);
+    }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+      background-color: #3e438e;
+    }
 
 .modal {
     background-color: beige;
@@ -46,12 +104,10 @@ nav li a {
     opacity: 0;
     transition: 0.2s;
 }
-.modal-open {
-    overflow: hidden;
-}
 .modal.show {
     visibility: visible;
     opacity: 1;
+    overflow: auto;
 }
 
 .modal-content {
@@ -91,29 +147,88 @@ nav li a {
     color: white;
     text-decoration: none;
 }
-
 .btn-close {
     background-color: red;
 }
-
-h2, h3 {
-    text-align: left;
-    color: white;
-}
-
 div#highest-rated {
     text-align: center;
 }
-
-h2.bm-title-h2 {
-    text-align: center;
+h3.bm-title-h2, h3.category-title {
+    text-align: left;
+    text-transform: uppercase;
     color: #ffffff;
 }
 
-h2.category-title {
-    text-align: center;
+/**
+MEILLEUR FILM
+ */
+
+ .meilleur_film {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(118, 20, 194);
+    border-radius: 30px;
+ }
+
+ #highest-title {
     color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+ div.highest-rated {
+    padding-top: 9%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
+ button#btn-play.openmodal {
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 10px;
+    height: auto;
+    justify-content: flex-start;
+    display: flex;
+    transform: translate3d(0, -1px, 3);
+    background: linear-gradient(90deg, #d110ce, #3ee800, #00b9fd, #0bfefe);
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+ }
+
+ .highest_info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-end;
+    padding-bottom: 35px;
+    padding-left: 15px;
+ }
+ div.highest_resume {
+    display: block;
+    color: rgba(157, 255, 0, 0.849);
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: auto;
+    padding-top: 35px;
+ }
+ .bm-resume {
+     text-align: center;
+     font-size: 1em;
+     color: #000000;
+     padding-bottom: 35px;
+ }
+
+#best-movie-description {
+    color: rgba(242, 255, 0, 0.849);
+    font-size: 1em;
+    font-family: "Helvetica Neue", sans-serif;
+    text-shadow: #232323;
+}
+
 
 /**
 CAROUSEL
@@ -123,16 +238,15 @@ CAROUSEL
     width: 100%;
     background-color: rgb(53, 51, 51);
     min-height: 100%;
-    overflow: auto;
   }
   body {
     width: 80%;
     margin: auto;
-    overflow: auto;
+    overflow: hidden;
   }
   
  body {
-     font-family: sans-serif;
+     font-family: Arial, Helvetica, sans-serif;
      padding: 0 50px 50px;
      background-color: #21D4FD;
      background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
@@ -153,8 +267,9 @@ CAROUSEL
      transform: translate3d(0, -1px, 0);
  }
  .item:hover {
-     transform: translate3d(0, -10px, 0);
- }
+     transform: translate3d(0, -30px, 0);
+     transform: scale(1.2); 
+}
  .item img {
      display: block;
      width: 100%;
@@ -254,3 +369,20 @@ CAROUSEL
          display: block;
      }
  }
+
+ div.carousel-best-movies {
+    background-color: rgba(157, 255, 0, 0.715);
+    border-radius: 30px;
+ }
+
+ @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -20,7 +20,7 @@ function getHighestRatedMovie() {
         let highest_rated = res.results[0] // premier film de la liste
         let titleHtml = document.getElementById("highest-title")
         titleHtml.innerHTML = highest_rated.title // innerHTML sert à modif
-        let btn_test = document.getElementById("btn-test")
+        let btn_test = document.getElementById("btn-play")
         btn_test.dataset.id = highest_rated.id // définit l'id sur le btn qui ouvre la modale (pour ce film)
         let modalImage = document.getElementById("modal-image")
         modalImage.src = highest_rated.image_url
@@ -216,19 +216,32 @@ async function modales() {
             let modal = document.querySelector(target);
             // On affiche la modale
             modal.classList.add("show");
+            overflowHidden();
+
+            // On ferme la modale sur la zone out
+            modal.addEventListener("click", function(){
+                this.classList.remove("show");
+                overflowAuto();
+            })
+            if (modal.addEventListener("click", function(){
+                this.classList.remove("show");
+                overflowAuto();
+            }));
 
             // On récupère les boutons de fermeture
             const modalClose = modal.querySelectorAll("[data-dismiss=dialog]");
-            
+            // On ferme la modale sur les boutons de fermeture
             for(let close of modalClose){
                 close.addEventListener("click", () => {
                     modal.classList.remove("show");
+                    overflowAuto();
                 });
             }
 
             // On gère la fermeture lors du clic sur la zone grise
             modal.addEventListener("click", function(){
                 this.classList.remove("show");
+                overflowAuto();
             });
             // On évite la propagation du clic d'un enfant à son parent
             modal.children[0].addEventListener("click", function(e){
@@ -236,7 +249,19 @@ async function modales() {
             })
         });
     }
+}
 
+/**
+ * Fonctions qui permettent de gérer l'overflow de la page
+ * overflowAuto
+ * overflowHidden
+ */
+async function overflowAuto() {
+    document.querySelector("html").style.overflowY = "auto";
+}
+
+async function overflowHidden() {
+    document.querySelector("html").style.overflowY = "hidden";
 }
 
 

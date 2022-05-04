@@ -5,36 +5,49 @@
         <meta name="viewport" content="width=device-width">
         <title>JustStreamIt</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+        <link rel="icon" type="image/png" href="img/logo_justreamit.png"/>
         <!-- script js -->
         <script src="js/main.js" async></script>
-        <link rel="icon" type="image/png" style="background-color: white" href="img/logo_justreamit.png"/>
     </head>
     <body>
-
       <header>
-          <div>
-            <h1>JustStreamIt</h1>
+          <div class="container">
+            <h1 class="main-title">JustStreamIt</h1>
           </div>
-          <nav>
-            <ul>
-              <li><a href="#highest-rated">Accueil</a></li>
-              <li><a href="#best-movies-comedy">Catégories</a></li>
-            </ul>
-        </nav>
+          <div class="homepage-btn">
+            <a href="#meilleur_film"><button id="home-btn-action" class="homebtn">Accueil</button></a>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Catégories</button>
+            <div class="dropdown-content">
+              <a href="#best-movies">Meilleurs Films</a>
+              <a href="#best-movies-comedy">Comédie</a>
+              <a href="#best-movies-sci-fi">Science-Fiction</a>
+              <a href="#best-movies-aventure">Aventure</a>
+            </div>
+          </div>
       </header>
-
+      <div class="space"></div>
     <main>
         <!-- Meilleur Film -->
-        <div id="highest-rated">
-            <h2>Le film le mieux noté</h2>
-            <div id="highest-title"></div>
-            <div id="btn-test" data-target="#modal" class="openmodal">
+        <div id="meilleur_film" class="meilleur_film">
+            <div class="highest-rated">
+                <div id="highest-title"></div>
+                <div class="highest_btn">
+                    <button id="btn-play" data-target="#modal" class="openmodal">Play</button>
+                    <div class="highest_resume">
+                        <h3>Résumé</h3>
+                    </div>
+                    <div class="bm-resume" id="best-movie-description"></div>
+                </div>
+            </div>
+            <div class="highest_info">
                 <img src="#" alt="bestMovie" id="modal-image">
             </div>
-            <div id="best-movie-description"></div>
         </div>
-
-        <!-- Carousel des Films les mieux notés -->            
+        <div class="space"></div>
+        <!-- Carousel des Films les mieux notés -->
+        <div id="best-movies">        
             <h3 class="bm-title-h2">Les meilleurs films</h3>
             <div class="carousel-best-movies">
                 <div id="best-movies-carousel"></div>
