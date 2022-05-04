@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
         <!-- script js -->
         <script src="js/main.js" async></script>
+        <link rel="icon" type="image/png" style="background-color: white" href="img/logo_justreamit.png"/>
     </head>
     <body>
 
@@ -16,8 +17,8 @@
           </div>
           <nav>
             <ul>
-              <li><a href="#">Accueil</a></li>
-              <li><a href="#">Catégories</a></li>
+              <li><a href="#highest-rated">Accueil</a></li>
+              <li><a href="#best-movies-comedy">Catégories</a></li>
             </ul>
         </nav>
       </header>
@@ -27,14 +28,14 @@
         <div id="highest-rated">
             <h2>Le film le mieux noté</h2>
             <div id="highest-title"></div>
-            <img src="#" id="modal-image">
+            <div id="btn-test" data-target="#modal" class="openmodal">
+                <img src="#" alt="bestMovie" id="modal-image">
+            </div>
             <div id="best-movie-description"></div>
-            <button id="btn-test" data-target="#modal" class="openmodal">Play</button>
         </div>
 
         <!-- Carousel des Films les mieux notés -->            
             <h3 class="bm-title-h2">Les meilleurs films</h3>
-            <div id="best-movies-carousel"></div>
             <div class="carousel-best-movies">
                 <div id="best-movies-carousel"></div>
             </div>
@@ -87,7 +88,6 @@
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-close" role="button" data-dismiss="dialog">Fermer</a>
-                    <a href="#" class="btn" role="button">Valider</a>
                 </div>
             </div>
         </div>

@@ -48,7 +48,7 @@ function getBestMovies() {
             bestMovies.innerHTML += `
                 <div class="item">
                     <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
-                    id="btn-test" data-target="#modal" class="openmodal"></div>
+                    data-target="#modal" class="openmodal" data-id="${movie.id}"></div>
                 </div>
             `
         }
@@ -77,7 +77,7 @@ function getBestMoviesComedie() {
             bestMoviesComedy.innerHTML += `
                 <div class="item">
                 <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
-                    id="btn-test" data-target="#modal" class="openmodal"></div>
+                    data-target="#modal" data-id="${movie.id}" class="openmodal"></div>
                 </div>
             `
         }
@@ -107,7 +107,7 @@ function getBestMoviesSciFi() {
                 bestMoviesSciFi.innerHTML += `
                     <div class="item">
                     <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
-                    id="btn-test" data-target="#modal" class="openmodal"></div>
+                    data-target="#modal" data-id="${movie.id}" class="openmodal"></div>
                     </div>
                 `
         }
@@ -137,7 +137,7 @@ function getBestMoviesAventure() {
                 bestMoviesAdventure.innerHTML += `
                     <div class="item">
                     <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
-                        id="btn-test" data-target="#modal" class="openmodal"></div>
+                        data-target="#modal" data-id="${movie.id}" class="openmodal"></div>
                     </div>
                 `
         }
@@ -155,21 +155,20 @@ function getBestMoviesAventure() {
 }
 
 
+
 // Gestion des modales générale
 async function modales() {
     // On récupère tous les boutons d'ouverture de modale
     const modalButtons = document.querySelectorAll(".openmodal");
-
+    // On récupère la modale
     for(let button of modalButtons){
         button.addEventListener("click", function(e){
             // On empêche la navigation
             e.preventDefault();
-
             // On récupère le data-target
             let target = this.dataset.target
             // On récupère les infos du film sur lequel l'user clique 
             const id = button.dataset.id
-            console.log(id);
             fetch(mainUrl + id)
             .then(res_movies => res_movies.json())
             .then(res => {
