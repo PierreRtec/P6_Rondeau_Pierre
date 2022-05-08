@@ -193,23 +193,46 @@ async function modales() {
                 modalImdbScore.innerHTML = res.imdb_score
                 // Son réalisateur
                 let modalDirectors = document.getElementById("modal-directors")
-                modalDirectors.innerHTML = res.directors
+                modalDirectors.innerHTML = `
+                    <div class="t-directors-container">Directeurs&ensp;:&emsp;
+                        <div id="t-directors">${res.directors}&ensp;</div>
+                    </div>
+                `
                 // La liste des acteurs
                 let modalActors = document.getElementById("modal-actors")
-                modalActors.innerHTML = res.actors
+                modalActors.innerHTML = `
+                <div class="t-actors-container">Distribution&emsp;:</div>
+                <div id="t-actors">&ensp;${res.actors.join(', ')}&ensp;</div>
+                `
                 // Sa durée
                 let modalDuration = document.getElementById("modal-duration")
-                modalDuration.innerHTML = res.duration
+                modalDuration.innerHTML = `
+                    <div class="t-duration-container">Durée&ensp;:&emsp;
+                        <div id="t-duration">${res.duration}&ensp;minutes</div>
+                    </div>
+                `
                 // Le pays d’origine
                 let modalCountries = document.getElementById("modal-countries")
-                modalCountries.innerHTML = res.countries
+                modalCountries.innerHTML = `
+                    <div class="t-countries-container">Pays d’origine&ensp;:&emsp;
+                        <div id="t-countries">${res.countries.join(', ')}</div>
+                    </div>
+                `
                 // Le résultat au Box Office
                 let modalWorldwidegrossincome = document.getElementById("modal-worldwide-gross-income")
-                modalWorldwidegrossincome.innerHTML = res.worldwide_gross_income
+                if (res.worldwide_gross_income != null) {
+                    modalWorldwidegrossincome.innerHTML = `
+                    <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
+                        <div id="t-wwgi">${res.worldwide_gross_income}entrées</div>
+                    </div>
+                `
+                }
                 // La description longue du film
                 let modalLongDescription = document.getElementById("modal-long-description")
-                modalLongDescription.innerHTML = res.long_description
-                // après la gestion d'affichage des films
+                modalLongDescription.innerHTML = `
+                    <div id="t-description">Description du film&ensp;:<br></div>
+                    <div id="modal-t-description">${res.long_description}</div>
+                `
             })
 
             // On récupère la bonne modale

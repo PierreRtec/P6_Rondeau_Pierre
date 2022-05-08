@@ -7,10 +7,7 @@ header {
     border-radius: 15px;
     margin: 15px;
     padding: 15px;  
-    display: flex;
-    justify-content: center;
     position: relative;
-    flex-wrap: wrap;
     box-shadow: 0 0 3em rgba(0, 0, 0, 0.877);
 }
 
@@ -24,7 +21,18 @@ h1.main-title {
     color: #ffffff;
 }
 
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* Bouton d'accueil */
+.homepage-btn {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
 .homebtn {
     background-color: #02c047;
     border-radius: 2px;
@@ -32,11 +40,7 @@ h1.main-title {
     padding: 16px;
     font-size: 16px;
     border: none;
-}
-.homepage-btn {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
+    text-decoration: none;
 }
 
 .homebtn:hover {
@@ -91,8 +95,9 @@ h1.main-title {
       background-color: #3e438e;
     }
 
+/* MODAL */
 .modal {
-    background-color: beige;
+    background-color:rgb(53, 51, 51);
     position: fixed;
     top: 0;
     right: 0;
@@ -111,14 +116,97 @@ h1.main-title {
 }
 
 .modal-content {
-    background-color: white;
+    background-color: rgb(118, 20, 194);
     max-width: 90vw;
     margin: auto;
     flex: 1;
     position: relative;
 }
+#modal-title {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+p#t-description {
+    color: white;
+    font-weight: bold;
+}
+p#modal-t-description {
+    color: white;
+    font-size: 15px;
+}
+.t-directors-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+div#t-directors {
+    font-weight: normal;
+    color:white;
+}
+
+.t-countries-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 5px;
+}
+div#t-countries {
+    font-weight: normal;
+    color:white;
+}
+
+.t-duration-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+div#t-duration {
+    font-weight: normal;
+    color:white;
+}
+
+.t-actors-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+div#t-actors {
+    padding-bottom: 5px;
+    font-weight: normal;
+    color:white;
+}
+
+.t-modal-wwgi-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-top: 5px;
+}
+div#t-wwgi {
+    font-weight: normal;
+    color:white;
+}
+
 
 .modal-close {
+    color: white;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -128,9 +216,11 @@ h1.main-title {
 .modal-header {
     padding-left: 10px;
     border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
 }
 
 .modal-body {
+    padding-left: 10px;
     max-height: 80vh;
     padding: 10px;
 }
@@ -143,13 +233,16 @@ h1.main-title {
 
 .btn {
     padding: 5px;
-    background-color: darkcyan;
     color: white;
     text-decoration: none;
+    border-radius: 5px;
 }
 .btn-close {
     background-color: red;
 }
+
+/**** fin MODAL ****/
+
 div#highest-rated {
     text-align: center;
 }
@@ -157,6 +250,11 @@ h3.bm-title-h2, h3.category-title {
     text-align: left;
     text-transform: uppercase;
     color: #ffffff;
+}
+.category-bg {
+    background-color: rgb(153, 37, 242);
+    border-radius: 50px;
+    padding: 7px;
 }
 
 /**
@@ -187,6 +285,18 @@ MEILLEUR FILM
     align-items: center;
 }
  button#btn-play.openmodal {
+    background-color: transparent;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 10px;
+    height: auto;
+    justify-content: flex-start;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Helvetica', sans-serif;
+ }
+ button#btn-play.openmodal:hover {
     border-radius: 3px;
     margin: 0 auto;
     padding: 10px;
@@ -371,7 +481,8 @@ CAROUSEL
  }
 
  div.carousel-best-movies {
-    background-color: rgba(157, 255, 0, 0.715);
+    background: rgb(113,255,155);
+    background: linear-gradient(90deg, rgba(113,255,155,1) 0%, rgba(67,222,45,1) 100%, rgba(0,212,255,1) 100%);
     border-radius: 30px;
  }
 

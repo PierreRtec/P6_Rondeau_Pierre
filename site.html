@@ -6,29 +6,34 @@
         <title>JustStreamIt</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
         <link rel="icon" type="image/png" href="img/logo_justreamit.png"/>
+
         <!-- script js -->
         <script src="js/main.js" async></script>
     </head>
     <body>
       <header>
-          <div class="container">
-            <h1 class="main-title">JustStreamIt</h1>
-          </div>
-          <div class="homepage-btn">
-            <a href="#meilleur_film"><button id="home-btn-action" class="homebtn">Accueil</button></a>
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn">Catégories</button>
-            <div class="dropdown-content">
-              <a href="#best-movies">Meilleurs Films</a>
-              <a href="#best-movies-comedy">Comédie</a>
-              <a href="#best-movies-sci-fi">Science-Fiction</a>
-              <a href="#best-movies-aventure">Aventure</a>
+        <div class="container">
+        <h1 class="main-title">JustStreamIt</h1>
+            <div class="container-nav">
+                <div class="homepage-btn">
+                    <a href="#meilleur_film" role="button" id="home-btn-action" class="homebtn">Accueil</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Catégories</button>
+                    <div class="dropdown-content">
+                    <a href="#best-movies">Meilleurs Films</a>
+                    <a href="#best-movies-comedy">Comédie</a>
+                    <a href="#best-movies-sci-fi">Science-Fiction</a>
+                    <a href="#best-movies-aventure">Aventure</a>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
       </header>
       <div class="space"></div>
+
     <main>
+
         <!-- Meilleur Film -->
         <div id="meilleur_film" class="meilleur_film">
             <div class="highest-rated">
@@ -46,18 +51,18 @@
             </div>
         </div>
         <div class="space"></div>
-        <!-- Carousel des Films les mieux notés -->
-        <div id="best-movies">        
-            <h3 class="bm-title-h2">Les meilleurs films</h3>
-            <div class="carousel-best-movies">
-                <div id="best-movies-carousel"></div>
-            </div>
-        </div>
 
+        <!-- Les meilleurs films -->
+            <div id="best-movies">        
+                <h3 class="bm-title-h2"><span class="category-bg">Les meilleurs films</span></h3>
+                <div class="carousel-best-movies">
+                    <div id="best-movies-carousel"></div>
+                </div>
+            </div>
 
         <!-- Catégorie 1 : Comédie -->
         <div id="best-movies-comedy">
-            <h3 class="category-title">Catégorie : Comédie</h3>
+            <h3 class="category-title"><span class="category-bg">Catégorie : Comédie</span></h3>
             <div class="carousel-best-movies">
                 <div id="best-movies-carousel-comedy"></div>
             </div>
@@ -65,7 +70,7 @@
 
         <!-- Catégorie 2 : Science-Fiction -->
         <div id="best-movies-sci-fi">
-            <h3 class="category-title">Catégorie : Science-Fiction</h3>
+            <h3 class="category-title"><span class="category-bg">Catégorie : Science-Fiction</span></h3>
             <div class="carousel-best-movies">
                 <div id="best-movies-carousel-sci-fi"></div>
             </div>
@@ -73,26 +78,26 @@
 
         <!-- Catégorie 3 : Aventure -->
         <div id="best-movies-aventure">
-            <h3 class="category-title">Catégorie : Aventure</h3>
+            <h3 class="category-title"><span class="category-bg">Catégorie : Aventure</span></h3>
             <div class="carousel-best-movies">
                 <div id="best-movies-carousel-aventure"></div>
             </div>
         </div>
 
-        <!-- Modale meilleur film -->
+        <!-- Modal meilleur film -->
         <div class="modal" id="modal" role="dialog">
             <div class="modal-content">
                 <div class="modal-close" data-dismiss="dialog">X</div>
                 <div class="modal-header">
                     <p id="modal-title">Titre de la modale 1</p>
-                    <img src="#" id="modal-img">
+                    <img src="#" alt="" id="modal-img">
                 </div>
                 <div class="modal-body">
-                    <p id="modal-long-description"></p>
-                    <p id="modal-genres"></p>
-                    <div id="modal-year"></div>
-                    <div id="modal-rated"></div>
-                    <div id="modal-imdb-score"></div>
+                    <div id="modal-long-description"></p></div>
+                    <div id="modal-genres"><p id="t-genres"></p></div>
+                    <div id="modal-year"><p id="t-year"></p></div>
+                    <div id="modal-rated"><p id="t-rated"></p></div>
+                    <div id="modal-imdb-score"><p id="t-imdb-score"></p></div>
                     <div id="modal-directors"></div>
                     <div id="modal-actors"></div>
                     <div id="modal-duration"></div>
@@ -104,10 +109,8 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modales carousel -->
-
     </main>
+    <!-- scripts js -->
+    <script src="js/carousel.js" async></script>
     </body>
 </html>
-<script src="js/carousel.js" async></script>
