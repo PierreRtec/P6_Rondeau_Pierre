@@ -181,21 +181,37 @@ async function modales() {
                 modalTitle.innerHTML = res.title
                 // Le genre complet du film
                 let modalGenres = document.getElementById("modal-genres")
-                modalGenres.innerHTML = res.genres
+                modalGenres.innerHTML = `
+                    <div class="t-genres-container">genres&ensp;:&emsp;
+                        <div id="t-genres">${res.genres.join(', ')}&ensp;</div>
+                    </div>
+                `
                 // Sa date de sortie
                 let modalYear = document.getElementById("modal-year")
-                modalYear.innerHTML = res.year
+                modalYear.innerHTML = `
+                    <div class="t-year-container">year&ensp;:&emsp;
+                        <div id="t-year">${res.year}&ensp;</div>
+                    </div>
+                `
                 // Son Rated
                 let modalRated = document.getElementById("modal-rated")
-                modalRated.innerHTML = res.rated
+                modalRated.innerHTML = `
+                    <div class="t-rated-container">rated&ensp;:&emsp;
+                        <div id="t-rated">${res.rated}&ensp;</div>
+                    </div>
+                `
                 // Son score Imdb
                 let modalImdbScore = document.getElementById("modal-imdb-score")
-                modalImdbScore.innerHTML = res.imdb_score
+                modalImdbScore.innerHTML = `
+                    <div class="t-imdb-score-container">imdb_score&ensp;:&emsp;
+                        <div id="t-imdb-score">${res.imdb_score}&ensp;</div>
+                    </div>
+                `
                 // Son réalisateur
                 let modalDirectors = document.getElementById("modal-directors")
                 modalDirectors.innerHTML = `
                     <div class="t-directors-container">Directeurs&ensp;:&emsp;
-                        <div id="t-directors">${res.directors}&ensp;</div>
+                        <div id="t-directors">${res.directors.join(', ')}&ensp;</div>
                     </div>
                 `
                 // La liste des acteurs
@@ -223,7 +239,7 @@ async function modales() {
                 if (res.worldwide_gross_income != null) {
                     modalWorldwidegrossincome.innerHTML = `
                     <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
-                        <div id="t-wwgi">${res.worldwide_gross_income}entrées</div>
+                        <div id="t-wwgi">${res.worldwide_gross_income}&ensp;entrées</div>
                     </div>
                 `
                 }

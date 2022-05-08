@@ -127,13 +127,15 @@ h1.main-title {
     font-size: 1.5em;
     font-weight: bold;
 }
-p#t-description {
+div#t-description {
     color: white;
     font-weight: bold;
 }
-p#modal-t-description {
+div#modal-t-description {
     color: white;
     font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 15px;
 }
 .t-directors-container {
     display: flex;
@@ -142,9 +144,60 @@ p#modal-t-description {
     font-weight: bold;
     color: white;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }
 div#t-directors {
+    font-weight: normal;
+    color:white;
+}
+
+.t-imdb-score-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 15px;
+}
+div#t-imdb-score {
+    font-weight: normal;
+    color:white;
+}
+.t-rated-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 15px;
+}
+div#t-rated {
+    font-weight: normal;
+    color:white;
+}
+
+.t-year-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 15px;
+}
+div#t-year {
+    font-weight: normal;
+    color:white;
+}
+
+.t-genres-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    padding-bottom: 15px;
+}
+div#t-genres {
     font-weight: normal;
     color:white;
 }
@@ -155,7 +208,7 @@ div#t-directors {
     align-items: center;
     font-weight: bold;
     color: white;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }
 div#t-countries {
     font-weight: normal;
@@ -169,7 +222,7 @@ div#t-countries {
     font-weight: bold;
     color: white;
     padding-bottom: 5px;
-    padding-top: 5px;
+    padding-top: 15px;
 }
 div#t-duration {
     font-weight: normal;
@@ -182,11 +235,8 @@ div#t-duration {
     align-items: center;
     font-weight: bold;
     color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 div#t-actors {
-    padding-bottom: 5px;
     font-weight: normal;
     color:white;
 }
@@ -223,12 +273,19 @@ div#t-wwgi {
     padding-left: 10px;
     max-height: 80vh;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: auto;
 }
 
 .modal-footer {
     padding: 10px;
     border-top: 1px solid #ddd;
     text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
@@ -369,53 +426,68 @@ CAROUSEL
      font-weight: 700;
      margin-bottom: 25px;
  }
- .item {
-     margin: 10px;
-     background-color: #fff;
-     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
-     transition: transform 0.3s;
-     transform: translate3d(0, -1px, 0);
+ .item {   
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    transition: transform 0.3s;
+    transform: translate3d(0, -1px, 0);
  }
  .item:hover {
-     transform: translate3d(0, -30px, 0);
-     transform: scale(1.2); 
+    transform: translate3d(0, -30px, 0);
+    transform: scale(1.2); 
 }
  .item img {
-     display: block;
-     width: 100%;
-     height: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
  }
  .item__body {
-     padding: 25px;
+    padding: 25px;
  }
  .item__title {
-     font-size: 24px;
-     margin-bottom: 5px;
-     font-weight: 700;
-     color: #232323;
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #232323;
  }
  .item__description {
-     color: #585858;
+    color: #585858;
+ }
+ .item__image {
+    display: flex;
+    flex-wrap: wrap;
  }
  .carousel,
  .items {
-     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
  }
  .carousel {
-     margin-bottom: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
  }
  .carousel__container {
-     transition: transform 0.3s;
-     transform: translateZ(0);
-     display: flex;
+    transition: transform 0.3s;
+    transform: translateZ(0);
+    display: flex;
+    flex-wrap: wrap;
  }
  .carousel__container:after {
-     content: "";
-     clear: both;
-     display: table;
+    content: "";
+    clear: both;
+    display: table;
  }
  .carousel__item {
-     float: left;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
  }
 
 .carousel__item .item {
@@ -423,61 +495,61 @@ CAROUSEL
 }
  .carousel__next,
  .carousel__prev {
-     position: absolute;
-     width: 36px;
-     height: 36px;
-     background: #fff url(../img/arrow-right.png) 50% no-repeat;
-     background-size: cover;
-     border-radius: 50%;
-     top: 50%;
-     margin-top: -20px;
-     right: -20px;
-     box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
-     cursor: pointer;
-     transition: transform 0.3s, opacity 0.3s;
-     opacity: 0.6;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: #fff url(../img/arrow-right.png) 50% no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right: -20px;
+    box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.6;
  }
  .carousel__next:hover,
  .carousel__prev:hover {
-     transform: scale(1.2);
+    transform: scale(1.2);
  }
  .carousel__prev {
-     background-image: url(../img/arrow-left.png);
-     background-size: cover;
-     right: auto;
-     left: -20px;
+    background-image: url(../img/arrow-left.png);
+    background-size: cover;
+    right: auto;
+    left: -20px;
  }
  .carousel__next--hidden,
  .carousel__prev--hidden {
-     opacity: 0;
+    opacity: 0;
  }
  .carousel__pagination {
-     position: absolute;
-     bottom: -20px;
-     left: 0;
-     right: 0;
-     text-align: center;
-     display: none;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: none;
  }
  .carousel__pagination__button {
-     background-color: #fff;
-     width: 10px;
-     height: 10px;
-     border-radius: 50%;
-     display: inline-block;
-     margin: 0 3px;
-     box-shadow: 0 2px 5px #3232321a;
-     transition: transform 0.3s;
-     cursor: pointer;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    box-shadow: 0 2px 5px #3232321a;
+    transition: transform 0.3s;
+    cursor: pointer;
  }
  .carousel__pagination__button--active,
  .carousel__pagination__button:hover {
-     transform: scale(1.4);
+    transform: scale(1.4);
  }
  @media screen and (min-width: 800px) {
-     .carousel__pagination {
-         display: block;
-     }
+    .carousel__pagination {
+    display: block;
+    }
  }
 
  div.carousel-best-movies {
