@@ -53,11 +53,12 @@ function getBestMovies() {
             `
         }
     })
+    // création du carousel grâce à la classe carousel.js
     .then(() => {
         new Carousel(document.querySelector("#best-movies-carousel"),{
             slidesToScroll: 1,
             slidesVisible: 4,
-            loop: false,
+            loop: true,
         })
     })
     .then(() => {
@@ -182,29 +183,31 @@ async function modales() {
                 // Le genre complet du film
                 let modalGenres = document.getElementById("modal-genres")
                 modalGenres.innerHTML = `
-                    <div class="t-genres-container">genres&ensp;:&emsp;
+                    <div class="t-genres-container">Catégorie(s)&ensp;:&emsp;
                         <div id="t-genres">${res.genres.join(', ')}&ensp;</div>
                     </div>
                 `
                 // Sa date de sortie
                 let modalYear = document.getElementById("modal-year")
                 modalYear.innerHTML = `
-                    <div class="t-year-container">year&ensp;:&emsp;
+                    <div class="t-year-container">Année&ensp;:&emsp;
                         <div id="t-year">${res.year}&ensp;</div>
                     </div>
                 `
                 // Son Rated
                 let modalRated = document.getElementById("modal-rated")
-                modalRated.innerHTML = `
-                    <div class="t-rated-container">rated&ensp;:&emsp;
+                if (res.rated != null) {
+                    modalRated.innerHTML = `
+                    <div class="t-rated-container">Classement&ensp;:&emsp;
                         <div id="t-rated">${res.rated}&ensp;</div>
                     </div>
                 `
+                }
                 // Son score Imdb
                 let modalImdbScore = document.getElementById("modal-imdb-score")
                 modalImdbScore.innerHTML = `
                     <div class="t-imdb-score-container">imdb_score&ensp;:&emsp;
-                        <div id="t-imdb-score">${res.imdb_score}&ensp;</div>
+                        <div id="t-imdb-score">${res.imdb_score}/10&ensp;</div>
                     </div>
                 `
                 // Son réalisateur

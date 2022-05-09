@@ -7,6 +7,9 @@ class Carousel {
      * @param {Object} [options.slidesVisible=4] Nombre d'éléments visible dans un slide
      * @param {boolean} [options.loop=false] Dois-ton boucler en fin carousel
      */
+    /**
+     * Constructeur de la classe carousel
+     */
     constructor (element, options = {}) {
         this.element = element
         this.options = Object.assign({}, {
@@ -34,7 +37,7 @@ class Carousel {
             return item
         })
 
-        // display
+        // Style et pagination
         this.setStyle()
         this.createNavigation()
 
@@ -59,7 +62,7 @@ class Carousel {
         this.items.forEach(item => item.style.width = ((100 / this.slidesVisible) / this.ratio) + "%")
     }
 
-
+    // Création de la pagination
     createNavigation () {
         let nextButton = this.createDivWithClass('carousel__next')
         let prevButton = this.createDivWithClass('carousel__prev')
@@ -84,7 +87,7 @@ class Carousel {
         })
     }
 
-
+    // Gestion des flèches directionnelles
     next () {
         this.gotoItem(this.currentItem + this.slidesToScroll)
     }
@@ -128,6 +131,7 @@ class Carousel {
         this.moveCallbacks.push(cb)
     }
 
+    // Fonction responsive //
     onWindowResize () {
         let mobile = window.mobile < 800
         if (mobile !== this.isMobile) {
