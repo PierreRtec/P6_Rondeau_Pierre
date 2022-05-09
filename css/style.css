@@ -3,7 +3,6 @@ html {
 }
 
 header {
-    background-color: linear-gradient(45deg, #f31c1c, #deb900) 30% no-repeat;
     border-radius: 15px;
     margin: 15px;
     padding: 15px;  
@@ -358,7 +357,7 @@ MEILLEUR FILM
     height: auto;
     justify-content: flex-start;
     display: flex;
-    transform: translate3d(0, -1px, 3);
+    transform: translate3d(0px, -1px, 3px);
     background: linear-gradient(90deg, #d110ce, #3ee800, #00b9fd, #0bfefe);
     background-size: 400% 400%;
     animation: gradient 3s ease infinite;
@@ -391,7 +390,7 @@ MEILLEUR FILM
     color: rgba(242, 255, 0, 0.849);
     font-size: 1em;
     font-family: "Helvetica Neue", sans-serif;
-    text-shadow: #232323;
+    text-shadow: black 1px 1px;
 }
 
 
