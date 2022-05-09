@@ -8,8 +8,7 @@ const comedie = "?genre=Comedy";
 const imdb_score =  "&sort_by=-imdb_score";
 const aventure = "?genre=Adventure";
 const category_url = "http://127.0.0.1:8000/api/v1/genres/"
-
-
+ 
 // Récup meilleur film
 function getHighestRatedMovie() {
     fetch(mainUrl + "?sort_by=-imdb_score")
@@ -47,7 +46,7 @@ function getBestMovies() {
         for (let movie of res.results) {
             bestMovies.innerHTML += `
                 <div class="item">
-                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+                <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
                     data-target="#modal" class="openmodal" data-id="${movie.id}"></div>
                 </div>
             `
@@ -104,13 +103,13 @@ function getBestMoviesSciFi() {
         console.log(res);
         res.results
         let bestMoviesSciFi = document.getElementById("best-movies-carousel-sci-fi")
-            for (let movie of res.results) {
-                bestMoviesSciFi.innerHTML += `
-                    <div class="item">
-                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+        for (let movie of res.results) {
+            bestMoviesSciFi.innerHTML += `
+                <div class="item">
+                <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
                     data-target="#modal" data-id="${movie.id}" class="openmodal"></div>
-                    </div>
-                `
+                </div>
+            `
         }
     })
     .then(() => {
@@ -134,13 +133,13 @@ function getBestMoviesAventure() {
         console.log(res);
         res.results
         let bestMoviesAdventure = document.getElementById("best-movies-carousel-aventure")
-            for (let movie of res.results) {
-                bestMoviesAdventure.innerHTML += `
-                    <div class="item">
-                    <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
-                        data-target="#modal" data-id="${movie.id}" class="openmodal"></div>
-                    </div>
-                `
+        for (let movie of res.results) {
+            bestMoviesAdventure.innerHTML += `
+                <div class="item">
+                <div class="item__image"><img src="${movie.image_url}" alt="${movie.title}"
+                    data-target="#modal" data-id="${movie.id}" class="openmodal"></div>
+                </div>
+            `
         }
     })
     .then(() => {
@@ -196,12 +195,12 @@ async function modales() {
                 `
                 // Son Rated
                 let modalRated = document.getElementById("modal-rated")
-                if (res.rated != null) {
+                if (res.rated != 'Not rated or unkown rating' && res.rated != 'Unrated') {
                     modalRated.innerHTML = `
                     <div class="t-rated-container">Classement&ensp;:&emsp;
                         <div id="t-rated">${res.rated}&ensp;</div>
                     </div>
-                `
+                    `
                 }
                 // Son score Imdb
                 let modalImdbScore = document.getElementById("modal-imdb-score")
@@ -239,12 +238,12 @@ async function modales() {
                 `
                 // Le résultat au Box Office
                 let modalWorldwidegrossincome = document.getElementById("modal-worldwide-gross-income")
-                if (res.worldwide_gross_income != null) {
+                if(res.worldwide_gross_income != null && res.worldwide_gross_income != 'N/A') {
                     modalWorldwidegrossincome.innerHTML = `
-                    <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
-                        <div id="t-wwgi">${res.worldwide_gross_income}&ensp;entrées</div>
-                    </div>
-                `
+                        <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
+                            <div id="t-wwgi">${res.worldwide_gross_income}&ensp;entrées</div>
+                        </div>
+                    ` 
                 }
                 // La description longue du film
                 let modalLongDescription = document.getElementById("modal-long-description")
@@ -305,7 +304,6 @@ async function overflowAuto() {
 async function overflowHidden() {
     document.querySelector("html").style.overflowY = "hidden";
 }
-
 
 //////////
 // Run //
