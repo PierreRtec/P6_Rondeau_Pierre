@@ -211,11 +211,13 @@ async function modales() {
                 `
                 // Son réalisateur
                 let modalDirectors = document.getElementById("modal-directors")
-                modalDirectors.innerHTML = `
+                if(res.directors != 'Unknown') {
+                    modalDirectors.innerHTML = `
                     <div class="t-directors-container">Directeurs&ensp;:&emsp;
                         <div id="t-directors">${res.directors.join(', ')}&ensp;</div>
                     </div>
                 `
+                }
                 // La liste des acteurs
                 let modalActors = document.getElementById("modal-actors")
                 modalActors.innerHTML = `
