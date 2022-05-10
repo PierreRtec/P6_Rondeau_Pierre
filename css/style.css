@@ -33,7 +33,7 @@ h1.main-title {
     margin: 10px;
 }
 .homepage-btn {
-    position: fixed;
+    position: relative;
 }
 .homebtn {
     background-color: #02c047;
