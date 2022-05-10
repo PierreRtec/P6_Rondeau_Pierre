@@ -261,7 +261,7 @@ async function modales() {
                         </div>
                     `
                 }
-                if (res.worldwide_gross_income === null || res.worldwide_gross_income != 'null') {
+                if (res.worldwide_gross_income === null || res.worldwide_gross_income === 'null') {
                     modalWorldwidegrossincome.innerHTML = `
                         <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
                             <div id="t-wwgi">Nombre d'entrées inconnu</div>
