@@ -202,6 +202,13 @@ async function modales() {
                     </div>
                     `
                 }
+                else {
+                    modalRated.innerHTML = `
+                        <div class="t-rated-container">Classement&ensp;:&emsp;
+                            <div id="t-rated">Inconnu&ensp;</div>
+                        </div>
+                    `  
+                }
                 // Son score Imdb
                 let modalImdbScore = document.getElementById("modal-imdb-score")
                 modalImdbScore.innerHTML = `
@@ -217,6 +224,13 @@ async function modales() {
                         <div id="t-directors">${res.directors.join(', ')}&ensp;</div>
                     </div>
                 `
+                }
+                else {
+                    modalRated.innerHTML = `
+                        <div class="t-directors-container">Directeurs&ensp;:&emsp;
+                            <div id="t-directors">Inconnus&ensp;</div>
+                        </div>
+                    `
                 }
                 // La liste des acteurs
                 let modalActors = document.getElementById("modal-actors")
@@ -240,12 +254,26 @@ async function modales() {
                 `
                 // Le résultat au Box Office
                 let modalWorldwidegrossincome = document.getElementById("modal-worldwide-gross-income")
-                if(res.worldwide_gross_income != null && res.worldwide_gross_income != 'N/A') {
+                if(res.worldwide_gross_income != null || res.worldwide_gross_income != 'N/A') {
                     modalWorldwidegrossincome.innerHTML = `
                         <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
                             <div id="t-wwgi">${res.worldwide_gross_income}&ensp;entrées</div>
                         </div>
-                    ` 
+                    `
+                }
+                if (res.worldwide_gross_income === null) {
+                    modalWorldwidegrossincome.innerHTML = `
+                        <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
+                            <div id="t-wwgi">Nombre d'entrées inconnu</div>
+                        </div>
+                    `
+                }
+                else {
+                    modalRated.innerHTML = `
+                        <div class="t-modal-wwgi-container">Box office&ensp;:&emsp;
+                            <div id="t-wwgi">Nombre d'entrées inconnu</div>
+                        </div>
+                    `
                 }
                 // La description longue du film
                 let modalLongDescription = document.getElementById("modal-long-description")
