@@ -340,32 +340,36 @@ async function overflowHidden() {
     'use strict';
     // On récupère le scroll
     function trackScroll() {
+        // on stock la valeur du scroll de la page dans une var
         var scrolled = window.pageYOffset;
+        // on stock la valeur de la hauteur de la page dans une var
         var coords = document.documentElement.clientHeight;
-        
+        // si le scroll est supérieur à la hauteur de la page
         if (scrolled > coords) {
             goTopBtn.classList.add('back_to_top-show');
         }
+        // l'inverse
         if (scrolled < coords) {
             goTopBtn.classList.remove('back_to_top-show');
         }
     }
-  
+    // retourne en haut de la page
     function backToTop() {
         if (window.pageYOffset > 0) {
             window.scrollBy(0, -80);
             setTimeout(backToTop, 0);
         }
     }
-  
+    // on récupère le bouton
     var goTopBtn = document.querySelector('.back_to_top');
-  
+    // on ajoute un écouteur d'évènement au scroll
     window.addEventListener('scroll', trackScroll);
+    // on ajoute un écouteur d'évènement au clic sur le bouton
     goTopBtn.addEventListener('click', backToTop);
   })();
   /* fin de la fonction bout haut de page  */
 
-  
+
 //////////
 // Run //
 ////////

@@ -32,7 +32,7 @@ h1.main-title {
     display: inline-block;
     margin: 10px;
 }
-.homepage-btn:mousedown {
+.homepage-btn {
     position: fixed;
 }
 .homebtn {
@@ -574,25 +574,25 @@ CAROUSEL
 /** bonus : Bouton de remontée de page **/
 
 .back_to_top {
-position: fixed;
-bottom: 80px;
-right: 40px;
-z-index: 9999;
-width: 30px;
-height: 30px;
-text-align: center;
-line-height: 30px;
-background: #02c047;
-color: rgb(94, 3, 94);
-cursor: pointer;
-border-radius: 2px;
-display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #02c047;
+    color: rgb(94, 3, 94);
+    cursor: pointer;
+    border-radius: 2px;
+    display: none;
 }
   
 .back_to_top:hover {
-background: #12de5c;
+    background: #12de5c;
 }
 
 .back_to_top-show {
-display: block;
+    display: block;
 }
