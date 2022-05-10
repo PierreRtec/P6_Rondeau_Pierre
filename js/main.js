@@ -335,6 +335,37 @@ async function overflowHidden() {
     document.querySelector("html").style.overflowY = "hidden";
 }
 
+/* Fonction bouton retour haut page  */
+(function() {
+    'use strict';
+    // On récupère le scroll
+    function trackScroll() {
+        var scrolled = window.pageYOffset;
+        var coords = document.documentElement.clientHeight;
+        
+        if (scrolled > coords) {
+            goTopBtn.classList.add('back_to_top-show');
+        }
+        if (scrolled < coords) {
+            goTopBtn.classList.remove('back_to_top-show');
+        }
+    }
+  
+    function backToTop() {
+        if (window.pageYOffset > 0) {
+            window.scrollBy(0, -80);
+            setTimeout(backToTop, 0);
+        }
+    }
+  
+    var goTopBtn = document.querySelector('.back_to_top');
+  
+    window.addEventListener('scroll', trackScroll);
+    goTopBtn.addEventListener('click', backToTop);
+  })();
+  /* fin de la fonction bout haut de page  */
+
+  
 //////////
 // Run //
 ////////
