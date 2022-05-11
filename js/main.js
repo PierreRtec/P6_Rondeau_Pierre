@@ -8,7 +8,7 @@ const comedie = "?genre=Comedy";
 const imdb_score =  "&sort_by=-imdb_score";
 const aventure = "?genre=Adventure";
 const category_url = "http://127.0.0.1:8000/api/v1/genres/"
- 
+
 // Récup meilleur film
 function getHighestRatedMovie() {
     fetch(mainUrl + "?sort_by=-imdb_score")
@@ -261,15 +261,15 @@ async function modales() {
                         </div>
                     `
                 }
-                if (res.worldwide_gross_income === null || res.worldwide_gross_income === 'null') {
+                if (res.worldwide_gross_income === 'null') {
                     modalWorldwidegrossincome.innerHTML = `
-                        <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
-                            <div id="t-wwgi">Nombre d'entrées inconnu</div>
+                        <div class=" t-modal-wwgi-container">Box Office&ensp;:&emsp;
+                            <div id="t-wwgi">N/A</div>
                         </div>
-                    `
+                        `
                 }
                 else {
-                    modalRated.innerHTML = `
+                    modalWorldwidegrossincome.innerHTML = `
                         <div class="t-modal-wwgi-container">Box office&ensp;:&emsp;
                             <div id="t-wwgi">Nombre d'entrées inconnu</div>
                         </div>
