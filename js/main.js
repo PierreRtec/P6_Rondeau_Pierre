@@ -22,7 +22,9 @@ function getHighestRatedMovie() {
         let btn_test = document.getElementById("btn-play")
         btn_test.dataset.id = highest_rated.id // définit l'id sur le btn qui ouvre la modale (pour ce film)
         let modalImage = document.getElementById("modal-image")
-        modalImage.src = highest_rated.image_url
+        modalImage.src = highest_rated.image_url // image du film
+        // met le titre du film dans l'attribut alt de l'image du meilleur film
+        modalImage.alt = highest_rated.title
         let highest_rated_url = res.results[0].url // url du premier film de la liste
         fetch(highest_rated_url)
         .then(res_movies => res_movies.json())
