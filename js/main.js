@@ -256,24 +256,17 @@ async function modales() {
                 `
                 // Le résultat au Box Office
                 let modalWorldwidegrossincome = document.getElementById("modal-worldwide-gross-income")
-                if(res.worldwide_gross_income != null || res.worldwide_gross_income != 'N/A') {
+                if(res.worldwide_gross_income === null || res.worldwide_gross_income === 'null') {
                     modalWorldwidegrossincome.innerHTML = `
                         <div class="t-modal-wwgi-container">Box Office&ensp;:&emsp;
-                            <div id="t-wwgi">${res.worldwide_gross_income}&ensp;entrées</div>
+                            <div id="t-wwgi">Nombre d'entrées inconnu</div>
                         </div>
                     `
-                }
-                if (res.worldwide_gross_income === 'null') {
-                    modalWorldwidegrossincome.innerHTML = `
-                        <div class=" t-modal-wwgi-container">Box Office&ensp;:&emsp;
-                            <div id="t-wwgi">N/A</div>
-                        </div>
-                        `
                 }
                 else {
                     modalWorldwidegrossincome.innerHTML = `
                         <div class="t-modal-wwgi-container">Box office&ensp;:&emsp;
-                            <div id="t-wwgi">Nombre d'entrées inconnu</div>
+                            <div id="t-wwgi">${res.worldwide_gross_income}&ensp;entrées</div>
                         </div>
                     `
                 }
